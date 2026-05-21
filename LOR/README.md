@@ -11,27 +11,27 @@ cmake -S . -B build && cmake --build build --config Release
 
 # Desarrollos innovadores implementados
 
-## 1. Sistema de guardado y carga de partida
+* Sistema de guardado y carga de partida
 Permite persistir el estado completo del juego utilizando archivos de texto.
 
-### Funciones principales
+* Funciones principales
 - `saveGame()`
 - `loadGame()`
 
-### Características
+* Características
 - Guarda posición del jugador.
 - Restaura enemigos y objetos.
 - Conserva estados de visibilidad y progreso.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 2. Sistema de niebla de guerra
+* Sistema de niebla de guerra
 Implementa visibilidad limitada alrededor del jugador para aumentar la exploración.
 
-### Funciones principales
+* Funciones principales
 - `revealArea()`
 - Uso de `known`
 
@@ -40,203 +40,203 @@ Implementa visibilidad limitada alrededor del jugador para aumentar la exploraci
 - Oculta zonas no exploradas.
 - Revela áreas conforme el jugador avanza.
 
-### Archivos
+* Archivos
 - `map.cpp`
 - `game.h`
 
 ---
 
-## 3. Minimapa dinámico
+* Minimapa dinámico
 Se añadió un minimapa renderizado en tiempo real.
 
-### Función principal
+*Función principal
 - `drawMinimap()`
 
-### Características
+*Características
 - Vista resumida del mapa.
 - Actualización dinámica.
 - Posicionado al lado derecho de la interfaz.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 4. Interfaz avanzada de consola
+*Interfaz avanzada de consola
 Sistema de renderizado optimizado para mejorar estabilidad visual.
 
-### Métodos utilizados
+*Métodos utilizados
 - `WriteConsoleOutputCharacterA`
 - Render buffered `draw()`
 - Render por línea `drawMap()`
 
-### Características
+*Características
 - Paneles informativos.
 - Instrucciones en pantalla.
 - Reducción de parpadeo.
 - Mejor experiencia visual.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 5. Sistema de sonidos y feedback audible
+* Sistema de sonidos y feedback audible
 Se implementó retroalimentación sonora utilizando la consola de Windows.
 
-### Funciones principales
+* Funciones principales
 - `beepShort()`
 - `beepLong()`
 
-### Características
+* Características
 - Sonidos de eventos importantes.
 - Confirmaciones auditivas.
 - Alertas para daño y acciones especiales.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 6. Sistema avanzado de ítems
+*  Sistema avanzado de ítems
 Se añadieron múltiples tipos de objetos interactivos.
 
-### Tipos implementados
+* Tipos implementados
 - `$` → Llave
 - `S` → Espada
 - `T` → Libreta/Tesoro
 - `P` → Poción
 
-### Características
+* Características
 - Campos personalizados:
   - `name`
   - `special`
 - Objetos con habilidades únicas.
 
-### Archivos
+* Archivos
 - `entity.h`
 - `game.cpp`
 
 ---
 
-## 7. Sistema de enemigos extendido
+*  Sistema de enemigos extendido
 Se implementaron múltiples tipos de enemigos con IA diferenciada.
 
-### Tipos de enemigos
+* Tipos de enemigos
 - `Chaser`
 - `Stalker`
 - `Shadow`
 - `Boss`
 
-### Características
+* Características
 - Persecución inteligente.
 - Movimiento por patrones.
 - Enemigos sombra.
 - Jefe con comportamiento especial.
 
-### Archivos
+*  Archivos
 - `entity.h`
 - `game.cpp`
 
 ---
 
-## 8. Ataque de área con espada
+*  Ataque de área con espada
 La espada permite eliminar enemigos cercanos.
 
-### Función principal
+* Función principal
 - `killNearbyEnemies()`
 
-### Características
+* Características
 - Ataque en casillas adyacentes.
 - Eliminación instantánea.
 - Mejora del combate.
 
-### Archivo
+*  Archivo
 - `game.cpp`
 
 ---
 
-## 9. Sistema de estados y mensajes dinámicos
+*  Sistema de estados y mensajes dinámicos
 Sistema textual para informar eventos importantes al jugador.
 
-### Función principal
+* Función principal
 - `setStatus()`
 
-### Características
+* Características
 - Mensajes contextuales.
 - Avisos de daño.
 - Notificaciones de victoria/derrota.
 - Información al recoger objetos.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 10. Sistema de salas dinámicas
+* Sistema de salas dinámicas
 Detección automática de habitaciones y eventos asociados.
 
-### Funciones principales
+* Funciones principales
 - `updateCurrentRoom()`
 - `drawRoomTitle()`
 
-### Características
+* Características
 - Títulos dinámicos.
 - Detección de sala actual.
 - Activación de eventos automáticos.
 
-### Archivos
+* Archivos
 - `game.cpp`
 - `map.cpp`
 
 ---
 
-## 11. Sistema de puertas dinámicas
+* Sistema de puertas dinámicas
 Permite desbloquear rutas dentro del mapa.
 
-### Función principal
+* Función principal
 - `openDoor(int x, int y)`
 
-### Características
+* Características
 - Conversión de muros en caminos transitables.
 - Apertura automática mediante eventos.
 
-### Archivo
+ *Archivo
 - `map.cpp`
 
 ---
 
-## 12. Sistema de salida y portal final
+* Sistema de salida y portal final
 Implementación de condición de victoria mediante portal.
 
-### Características
+* Características
 - Casilla especial `X`.
 - Victoria condicionada al tesoro.
 - Portal interactivo.
 
-### Archivos
+* Archivos
 - `map.cpp`
 - `game.cpp`
 
 ---
 
-## 13. Configuración avanzada de consola
+* Configuración avanzada de consola
 Ajustes automáticos del tamaño y buffer de consola.
 
-### Funciones utilizadas
+* Funciones utilizadas
 - `SetConsoleScreenBufferSize`
 - `SetConsoleWindowInfo`
 
-### Características
+* Características
 - Mejor adaptación visual.
 - Mayor estabilidad gráfica.
 
-### Archivo
+* Archivo
 - `game.cpp`
 
 ---
 
-## 14. Compatibilidad multiplataforma
+##  Compatibilidad multiplataforma
 Soporte para diferentes compiladores y sistemas.
 
 ### Compatibilidad
@@ -254,7 +254,7 @@ Soporte para diferentes compiladores y sistemas.
 
 ---
 
-## 15. Uso de estructuras estáticas
+##  Uso de estructuras estáticas
 Implementación sin memoria dinámica.
 
 ### Estructuras utilizadas
@@ -271,7 +271,7 @@ Implementación sin memoria dinámica.
 
 ---
 
-## 16. Menús e interacción de usuario
+##  Menús e interacción de usuario
 Sistema de navegación interactiva mediante consola.
 
 ### Funciones principales
@@ -288,7 +288,7 @@ Sistema de navegación interactiva mediante consola.
 
 ---
 
-## 17. Soporte para entidades de ancho doble
+## Soporte para entidades de ancho doble
 Permite enemigos y objetos de mayor tamaño.
 
 ### Característica principal
